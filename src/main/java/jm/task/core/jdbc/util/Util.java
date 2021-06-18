@@ -7,13 +7,13 @@ import java.sql.SQLException;
 public class Util {
     public static final String UserName = "root";
     public static final String password = "Ghjuhfvvbcn2021";
-    public static final String URL = "jdbc:mysql://localhost:3306/first_lesson";
+    public static final String URL = "jdbc:mysql://localhost:3306/first_lesson" + "?serverTimezone=Europe/Moscow&useSSL=false";
 
     public static Connection getConnection(){
-        String connectionURL = "jdbc:mysql://" + "localhost" + ":3306/" + "first_lesson" + "?serverTimezone=Europe/Moscow&useSSL=false";
+
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(connectionURL, UserName, password);
+            connection = DriverManager.getConnection(URL, UserName, password);
             System.out.println("Connection OK");
         } catch (SQLException e) {
             e.printStackTrace();
